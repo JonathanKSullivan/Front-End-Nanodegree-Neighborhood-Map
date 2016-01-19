@@ -1,0 +1,8 @@
+markerLoader = function(){
+	ViewModel.loadMarker(ViewModel.makeMarker({
+        lat: 32.727165,
+        lng: -96.833186
+    },"will"));
+};
+
+

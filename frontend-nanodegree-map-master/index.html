@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js'></script>
+		<script type='text/javascript' src='js/map.js' defer="defer"></script>
+		
+
+		<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+		<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+		<script type="text/javascript" src="https://raw.github.com/padolsey/prettyPrint.js/master/prettyprint.js"></script>
+		<script type='text/javascript' src='js/yelpinfo.js' defer="defer"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body onload="">
+		<div id="search-bar">
+			<label for="query">
+				<input id="query" type="search" placeholder ="Enter a Point of interest" data-bind="value: query, valueUpdate: 'keypress'" autofocus>
+			</label>
+			
+		</div>
+		<div id="map"></div>
+		<div id="list">
+			<h1>My Neighborhood</h1>
+			<div data-bind="foreach: markerList">
+				<div id="in-list">
+					<div class="listing" data-bind="text: title, click: $parent.listClick.bind($data,$index())"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArKE_YxNRssND87WYp_JH93njOoa7jnpU&callback=ViewModel.initMap" async defer></script>
+	</body>
+</html>
